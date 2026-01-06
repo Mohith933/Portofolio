@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mohith Sai | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+/* =========================
+   2026 MODERN PORTFOLIO UI
+   Clean • Recruiter-first
+========================= */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #0b1220, #020617);
+  color: #e5e7eb;
+  line-height: 1.7;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ================= HEADER ================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #38bdf8;
+}
+
+.logo span {
+  color: #facc15;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.navbar a {
+  font-weight: 500;
+  opacity: 0.8;
+  transition: opacity 0.3s, color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  opacity: 1;
+  color: #38bdf8;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 24px;
+  height: 3px;
+  background: #38bdf8;
+  border-radius: 2px;
+}
+
+/* ================= HERO ================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.profile-img {
+  width: 150px;
+  border-radius: 50%;
+  margin-bottom: 24px;
+  border: 3px solid rgba(56,189,248,0.6);
+  box-shadow: 0 0 40px rgba(56,189,248,0.35);
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+}
+
+.highlight {
+  color: #facc15;
+}
+
+.hero p {
+  margin-top: 8px;
+  font-size: 1.1rem;
+  color: #94a3b8;
+}
+
+/* CTA */
+.btn {
+  margin-top: 24px;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #020617;
+  box-shadow: 0 10px 30px rgba(56,189,248,0.35);
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Socials */
+.socials {
+  margin-top: 26px;
+  display: flex;
+  gap: 22px;
+  font-size: 26px;
+}
+
+.socials a {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-4px) scale(1.1);
+  opacity: 0.9;
+}
+
+/* ================= SECTIONS ================= */
+section {
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: #38bdf8;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  margin: 14px auto 0;
+  background: linear-gradient(to right, #38bdf8, #facc15);
+  border-radius: 5px;
+}
+
+/* ================= ABOUT ================= */
+.about-container {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-img {
+  width: 260px;
+  border-radius: 24px;
+  box-shadow: 0 25px 60px rgba(250,204,21,0.25);
+}
+
+.about-container p {
+  max-width: 620px;
+  font-size: 1.05rem;
+  color: #cbd5f5;
+}
+
+/* ================= SKILLS ================= */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 28px;
+}
+
+.skill {
+  background: rgba(30,41,59,0.65);
+  border: 1px solid rgba(56,189,248,0.15);
+  padding: 24px;
+  border-radius: 18px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-8px);
+}
+
+.skill h3 {
+  color: #facc15;
+  font-size: 1.05rem;
+}
+
+/* ================= PROJECTS ================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.project-card {
+  background: linear-gradient(180deg, rgba(30,41,59,0.9), rgba(2,6,23,0.9));
+  border: 1px solid rgba(56,189,248,0.15);
+  padding: 26px;
+  border-radius: 22px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-card h3 {
+  color: #facc15;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.project-links {
+  margin-top: 14px;
+}
+
+.project-links a {
+  margin-right: 10px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(56,189,248,0.15);
+  border: 1px solid rgba(56,189,248,0.4);
+  font-size: 0.85rem;
+}
+
+/* ================= CONTACT ================= */
+.contact form {
+  max-width: 420px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact input,
+.contact textarea {
+  background: #020617;
+  border: 1px solid #334155;
+  color: #e5e7eb;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.contact button {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #020617;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #94a3b8;
+  background: #020617;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+ .navbar ul { display: none; flex-direction: column; background:  #020617; position: absolute; top: 65px; right: 40px; border-radius: 8px; padding: 10px 20px; width: 180px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+  .navbar ul.active {
+    display: flex;
+  }
+  .hero h1{
+    font-size:1.9rem;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Mohith<span>Sai</span></div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger" aria-label="Menu" role="button" tabindex="0">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </header>
+
+ <!-- HOME -->
+<section id="home" class="hero">
+  <img src="mohith.png" alt="Profile Picture" class="profile-img" />
+  <h1>Hello, I'm <span class="highlight">Mohith Sai</span></h1>
+  <p>Frontend Developer • UI/UX • AI Interfaces</p>
+
+  <a href="Resume.pdf" download class="btn">📄 Download CV</a>
+
+  <div class="socials" style="font-size:28px;">
+    <a href="https://github.com/mohith933" target="_blank" aria-label="GitHub">🐙</a>
+    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">💼</a>
+    <a href="https://www.figma.com" target="_blank" aria-label="Figma">🎨</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="about-container">
+    <img src="mohith1.png" alt="About Image" class="about-img" />
+    <p>
+      I’m a product-focused frontend developer who enjoys building clean,
+      user-friendly interfaces. I work at the intersection of UI/UX and
+      interactive web experiences, turning ideas into simple, usable products.
+    </p>
+  </div>
+</section>
+
+
+  <!-- SKILLS -->
+  <!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+
+    <div class="skill">
+      <h3>🌐 HTML</h3>
+    </div>
+
+    <div class="skill">
+      <h3>🎨 CSS</h3>
+    </div>
+
+    <div class="skill">
+      <h3>⚡ JavaScript</h3>
+    </div>
+
+    <div class="skill">
+      <h3>⚛️ React</h3>
+    </div>
+
+    <div class="skill">
+      <h3>🎯 UI / UX Design</h3>
+    </div>
+
+    <div class="skill">
+      <h3>🧩 Frontend Architecture</h3>
+    </div>
+
+    <div class="skill">
+      <h3>🤖 Basic Chatbot Logic</h3>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- PROJECTS -->
+ <!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <h3>🤖 Bravexa AI</h3>
+      <p>Frontend-only, rule-based chatbot with clean chat UI and interaction flow.</p>
+      <div class="project-links">
+        <a href="https://your-live-link" target="_blank">Live</a>
+        <a href="https://github.com/mohith933" target="_blank">Code</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>💖 Valentine AI</h3>
+      <p>Emotional chatbot interface focused on expressive UI and user-friendly design.</p>
+      <div class="project-links">
+        <a href="https://your-live-link" target="_blank">Live</a>
+        <a href="https://github.com/mohith933" target="_blank">Code</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>🧑‍💻 Personal Portfolio</h3>
+      <p>Responsive developer portfolio showcasing projects, skills, and UI design.</p>
+      <div class="project-links">
+        <a href="https://mohith933.github.io/portofolio/" target="_blank">Live</a>
+        <a href="https://github.com/mohith933" target="_blank">Code</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <form action="https://formspree.io/f/yourformid" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="_replyto" required />
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Send</button>
+  </form>
+   <button id="scrollTopBtn" style="position:fixed;bottom:30px;right:30px;display:none;padding:10px 15px;background:#38bdf8;color:#fff;border:none;border-radius:8px;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.3);z-index:1000;">↑ Top</button>
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2024 Mohith Sai. Designed with passion.</p>
+  </footer>
+  <script>
+/* =========================
+   2026 CLEAN & LAG-FREE JS
+   Optimized • Minimal
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ===== Mobile Menu ===== */
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".navbar ul");
+
+  hamburger?.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+
+  /* ===== Smooth Scroll + Close Menu ===== */
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute("href"));
+      if (!target) return;
+
+      target.scrollIntoView({ behavior: "smooth" });
+      navMenu.classList.remove("active");
+    });
+  });
+
+  /* ===== Active Section Highlight (Optimized) ===== */
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".navbar a");
+
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => link.classList.remove("active"));
+        const activeLink = document.querySelector(
+          `.navbar a[href="#${entry.target.id}"]`
+        );
+        activeLink?.classList.add("active");
+      }
+    });
+  }, { threshold: 0.6 });
+
+  sections.forEach(section => sectionObserver.observe(section));
+
+  /* ===== Scroll To Top Button ===== */
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  window.addEventListener("scroll", () => {
+    scrollTopBtn.style.display = window.scrollY > 400 ? "block" : "none";
+  });
+
+  scrollTopBtn?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+});
+</script>
+</body>
+</html>
