@@ -420,8 +420,8 @@ footer {
       <h3>🤖 Bravexa AI</h3>
       <p>Frontend-only, rule-based chatbot with clean chat UI and interaction flow.</p>
       <div class="project-links">
-        <a href="https://your-live-link" target="_blank">Live</a>
-        <a href="https://github.com/mohith933" target="_blank">Code</a>
+        <a href="https://mohith933.github.io/Bravexa-Ai/home.html" target="_blank">Live</a>
+        <a href="https://github.com/Mohith933/Bravexa-Ai" target="_blank">Code</a>
       </div>
     </div>
 
@@ -429,8 +429,8 @@ footer {
       <h3>💖 Valentine AI</h3>
       <p>Emotional chatbot interface focused on expressive UI and user-friendly design.</p>
       <div class="project-links">
-        <a href="https://your-live-link" target="_blank">Live</a>
-        <a href="https://github.com/mohith933" target="_blank">Code</a>
+        <a href="https://mohith933.github.io/Valantine-Ai/home.html" target="_blank">Live</a>
+        <a href="https://github.com/Mohith933/Valantine-Ai" target="_blank">Code</a>
       </div>
     </div>
 
@@ -438,8 +438,8 @@ footer {
       <h3>🧑‍💻 Personal Portfolio</h3>
       <p>Responsive developer portfolio showcasing projects, skills, and UI design.</p>
       <div class="project-links">
-        <a href="https://mohith933.github.io/portofolio/" target="_blank">Live</a>
-        <a href="https://github.com/mohith933" target="_blank">Code</a>
+        <a href="https://mohith933.github.io/Portofolio/" target="_blank">Live</a>
+        <a href="https://github.com/Mohith933/Portofolio" target="_blank">Code</a>
       </div>
     </div>
 
@@ -448,23 +448,46 @@ footer {
 
 
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
+<!-- CONTACT -->
+<section id="contact" class="contact">
   <h2>Contact Me</h2>
-  <form action="https://formspree.io/f/yourformid" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required />
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="_replyto" required />
+  <form id="contactForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" required />
 
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
+    <label for="email">Email</label>
+    <input type="email" id="email" required />
+
+    <label for="message">Message</label>
+    <textarea id="message" rows="5" required></textarea>
 
     <button type="submit">Send</button>
   </form>
-   <button id="scrollTopBtn" style="position:fixed;bottom:30px;right:30px;display:none;padding:10px 15px;background:#38bdf8;color:#fff;border:none;border-radius:8px;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.3);z-index:1000;">↑ Top</button>
+
+  <!-- Popup -->
+  <div id="popup"
+       style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);
+              justify-content:center;align-items:center;z-index:2000;">
+    <div style="background:#020617;padding:30px 40px;border-radius:16px;
+                text-align:center;box-shadow:0 20px 40px rgba(0,0,0,0.5);">
+      <h3 style="color:#38bdf8;margin-bottom:10px;">✅ Message Sent</h3>
+      <p style="color:#cbd5e1;">Thanks for reaching out. I’ll get back to you soon.</p>
+      <button id="closePopup"
+              style="margin-top:18px;padding:8px 20px;border:none;
+                     border-radius:10px;background:#38bdf8;color:#020617;
+                     font-weight:600;cursor:pointer;">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <button id="scrollTopBtn"
+    style="position:fixed;bottom:30px;right:30px;display:none;
+           padding:10px 15px;background:#38bdf8;color:#fff;border:none;
+           border-radius:8px;cursor:pointer;z-index:1000;">↑</button>
 </section>
+
 
   <!-- FOOTER -->
   <footer>
@@ -526,8 +549,22 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollTopBtn?.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+    const form = document.getElementById("contactForm");
+const popup = document.getElementById("popup");
+const closePopup = document.getElementById("closePopup");
 
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  popup.style.display = "flex";
+  form.reset();
 });
+
+closePopup.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+});
+    
 </script>
 </body>
 </html>
+
