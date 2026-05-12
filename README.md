@@ -1,6 +1,6 @@
 # 🧑‍💻 Personal Portfolio
 
-> A clean and focused portfolio to showcase my projects and skills.
+A clean and modern portfolio website built to showcase my projects, skills, and development journey.
 
 ---
 
@@ -10,32 +10,44 @@
 
 ---
 
-## 📌 Overview
+## 📌 About
 
-This portfolio is designed to present my work in a simple and structured way, helping recruiters quickly understand my skills and projects.
+This portfolio highlights my main projects, technical skills, and experience in frontend and backend development.
+
+Designed with a simple and professional UI to help recruiters and visitors quickly understand my work.
 
 ---
 
-## 🚀 Features
+## ✨ Features
 
-- Clean and minimal UI  
-- Responsive design  
-- Focused project showcase  
-- Easy navigation  
+- Modern and minimal design  
+- Fully responsive layout  
+- Smooth navigation  
+- Project showcase section  
+- Skills and contact sections  
+- Mobile-friendly interface  
 
 ---
 
 ## 🛠️ Tech Stack
 
-- HTML  
-- CSS  
+- HTML5  
+- CSS3  
 - JavaScript  
+
+---
+
+## 🚀 Projects Included
+
+- ❤️ HeartFeel  
+- 📝 HeartNote  
+- 🧑‍💻 Personal Portfolio  
 
 ---
 
 ## 🎯 Purpose
 
-To create a clear and professional space where my projects and skills can be viewed easily.
+The goal of this portfolio is to create a professional online presence and showcase real-world projects, skills, and continuous learning in software development.
 
 ---
 
@@ -43,3 +55,6 @@ To create a clear and professional space where my projects and skills can be vie
 
 **Mohith Sai**  
 Aspiring Software Engineer
+
+- GitHub: https://github.com/Mohith933
+- LinkedIn: [https://www.linkedin.com/](https://www.linkedin.com/in/bhimavarapu-mohith-sai-456b82318/)
