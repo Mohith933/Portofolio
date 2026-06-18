@@ -234,7 +234,7 @@ h2::after {
 /* ================= PROJECTS ================= */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 32px;
 }
 
@@ -244,6 +244,9 @@ h2::after {
   padding: 26px;
   border-radius: 22px;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .project-card:hover {
@@ -258,19 +261,36 @@ h2::after {
 .project-card p {
   color: #cbd5e1;
   font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.tech-stack {
+  color: #38bdf8 !important;
+  font-weight: 500;
+  font-size: 0.85rem !important;
+  margin-top: 5px;
+  margin-bottom: 15px !important;
 }
 
 .project-links {
-  margin-top: 14px;
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .project-links a {
-  margin-right: 10px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(56,189,248,0.15);
-  border: 1px solid rgba(56,189,248,0.4);
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.4);
   font-size: 0.85rem;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.project-links a:hover {
+  background: rgba(56, 189, 248, 0.3);
+  border-color: #38bdf8;
 }
 
 /* ================= CONTACT ================= */
@@ -310,10 +330,9 @@ footer {
 }
 
 /* ================= MOBILE ================= */
- /* Update the Mobile CSS at the bottom of your style tag */
 @media (max-width: 768px) {
   .navbar ul {
-    display: none; /* Keep hidden by default */
+    display: none;
     flex-direction: column;
     background: #0f172a;
     position: absolute;
@@ -327,21 +346,19 @@ footer {
     gap: 15px;
   }
 
-  /* This is the key fix for the menu showing up */
   .navbar ul.active {
     display: flex !important; 
     z-index: 1000;
   }
 
   .hamburger {
-    display: flex; /* Ensure hamburger is visible on mobile */
+    display: flex;
   }
 }
 </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="logo">Mohith<span>Sai</span></div>
     <nav class="navbar">
@@ -360,165 +377,129 @@ footer {
     </div>
   </header>
 
- <!-- HOME -->
-<!-- HOME -->
-<section id="home" class="hero">
-  <img src="mohith.png" alt="Profile Picture" class="profile-img" />
-  <h1>Hi, I'm <span class="highlight">Mohith Sai</span></h1>
-
-  <p>
-Software Engineer focused on building human-centered applications using
-Python, Django, JavaScript, and scalable backend systems.
-</p>
-  <a href="Resume.pdf" download class="btn">📄 Download Resume</a>
-
-  <div class="socials" style="font-size:28px;">
-    <a href="https://github.com/mohith933" target="_blank" aria-label="GitHub">🐙</a>
-    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">💼</a>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Me</h2>
-
-  <div class="about-container">
-    <img src="mohith1.png" alt="About Image" class="about-img" />
-
+  <section id="home" class="hero">
+    <img src="mohith.png" alt="Profile Picture" class="profile-img" />
+    <h1>Hi, I'm <span class="highlight">Mohith Sai</span></h1>
     <p>
-      I am a Computer Science student interested in Software Engineering
-      and full-stack web development.
-      I build real-world applications using Python, Django, JavaScript,
-      and PostgreSQL with focus on clean UI and backend systems.
-      Currently improving my Data Structures, backend development,
-      and practical problem-solving skills through projects.
+      Software Engineer focused on building human-centered applications using
+      Python, Django, JavaScript, and scalable backend systems.
     </p>
-  </div>
-</section>
-
-
-
-  <!-- SKILLS -->
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-
-    <div class="skill">
-      <h3>🐍 Python</h3>
+    <a href="Resume.pdf" download class="btn">📄 Download Resume</a>
+    <div class="socials" style="font-size:28px;">
+      <a href="https://github.com/mohith933" target="_blank" aria-label="GitHub">🐙</a>
+      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">💼</a>
     </div>
+  </section>
 
-    <div class="skill">
-      <h3>🌐 Django</h3>
-    </div>
-
-    <div class="skill">
-      <h3>⚡ JavaScript</h3>
-    </div>
-
-    <div class="skill">
-      <h3>🗄️ PostgreSQL</h3>
-    </div>
-
-    <div class="skill">
-      <h3>🔗 REST APIs</h3>
-    </div>
-
-    <div class="skill">
-      <h3>☁️ Cloud Deployment</h3>
-    </div>
-
-    <div class="skill">
-      <h3>🌍 HTML & CSS</h3>
-    </div>
-
-    <div class="skill">
-      <h3>🔧 Git</h3>
-    </div>
-
-  </div>
-</section>
-
-
-<section id="projects">
-  <h2>Main Products</h2>
-
-  <div class="projects-grid">
-
-    <!-- HeartFeel -->
-    <div class="project-card">
-      <h3>💖 HeartFeel</h3>
-
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <img src="mohith1.png" alt="About Image" class="about-img" />
       <p>
-        A calm writing space designed for emotional reflection and private expression.
+        I am a Computer Science student interested in Software Engineering
+        and full-stack web development.
+        I build real-world applications using Python, Django, JavaScript,
+        and PostgreSQL with focus on clean UI and backend systems.
+        Currently improving my Data Structures, backend development,
+        and practical problem-solving skills through projects.
       </p>
+    </div>
+  </section>
 
-      <p>
-        Published on Microsoft Store as a real-world product focused on simplicity,
-        privacy, and human-centered design.
-      </p>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill"><h3>🐍 Python</h3></div>
+      <div class="skill"><h3>🌐 Django</h3></div>
+      <div class="skill"><h3>⚡ JavaScript</h3></div>
+      <div class="skill"><h3>🗄️ PostgreSQL</h3></div>
+      <div class="skill"><h3>🔗 REST APIs</h3></div>
+      <div class="skill"><h3>☁️ Cloud Deployment</h3></div>
+      <div class="skill"><h3>🌍 HTML & CSS</h3></div>
+      <div class="skill"><h3>🔧 Git</h3></div>
+    </div>
+  </section>
 
-      <p class="tech-stack">
-        HTML • CSS • JavaScript • PWA
-      </p>
+  <section id="projects">
+    <h2>Main Products</h2>
+    <div class="projects-grid">
 
-      <div class="project-links">
-        <a href="ms-windows-store://pdp/?productid=9N79GPDFJ3G7">Microsoft Store</a>
-        <a href="https://github.com/Mohith933/HeartFeel">GitHub</a>
+      <div class="project-card">
+        <h3>🛠️ Hridaya CLI</h3>
+        <p>
+          A developer tool designed for running clear, human-centric commands inside the terminal.
+        </p>
+        <p>
+          Built to ease command-line syntax stress, allowing intuitive native operations and effortless workflows.
+        </p>
+        <p class="tech-stack">
+          Node.js • JavaScript • NPM • CLI-Engine
+        </p>
+        <div class="project-links">
+          <a href="https://www.npmjs.com/package/hridaya-os" target="_blank">NPM Package</a>
+          <a href="https://github.com/Mohith933/HridayaOS" target="_blank">GitHub</a>
+        </div>
       </div>
-    </div>
 
-    <!-- HeartNote -->
-    <div class="project-card">
-      <h3>❤️ HeartNote</h3>
-
-      <p>
-        Full-stack writing platform focused on thoughtful AI-assisted responses
-        and clean user experience.
-      </p>
-
-      <p>
-        Built with scalable backend architecture, authentication systems,
-        PostgreSQL integration, and responsive UI.
-      </p>
-
-      <p class="tech-stack">
-        Python • Django • PostgreSQL • REST APIs
-      </p>
-
-      <div class="project-links">
-        <a href="https://heartnote-ai.onrender.com/">Live</a>
-        <a href="https://github.com/Mohith933/HeartNote">GitHub</a>
+      <div class="project-card">
+        <h3>💖 HeartFeel</h3>
+        <p>
+          A calm writing space designed for emotional reflection and private expression.
+        </p>
+        <p>
+          Published on the Microsoft Store as an offline-first native app centered around privacy and user experience.
+        </p>
+        <p class="tech-stack">
+          HTML • CSS • JavaScript • PWA • Electron
+        </p>
+        <div class="project-links">
+          <a href="https://apps.microsoft.com/detail/9n79gpdfj3g7?hl=en-us&gl=IN&ocid=pdpshare">Microsoft Store</a>
+          <a href="https://github.com/Mohith933/HeartFeel" target="_blank">GitHub</a>
+          <a href="https://mohith933.github.io/HeartFeel/" target="_blank">Live Web</a>
+        </div>
       </div>
+
+      <div class="project-card">
+        <h3>❤️ HeartNote</h3>
+        <p>
+          Full-stack writing platform focused on thoughtful AI-assisted responses and clean design.
+        </p>
+        <p>
+          Built with scalable backend architecture, user authentication, and responsive layout flows.
+        </p>
+        <p class="tech-stack">
+          Python • Django • PostgreSQL • REST APIs
+        </p>
+        <div class="project-links">
+          <a href="https://apps.microsoft.com/detail/9pm5qml3dxjk?hl=en-GB&gl=IN">Microsoft Store</a>
+          <a href="https://github.com/Mohith933/HeartNote" target="_blank">GitHub</a>
+          <a href="https://heartnote-ai.onrender.com/" target="_blank">Live Web</a>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form id="hybridContactForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" required />
 
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
 
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" required></textarea>
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>Contact Me</h2>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
- <form id="hybridContactForm">
-    <label for="name">Name</label>
-    <input type="text" id="name" required />
-
-    <label for="email">Email</label>
-    <input type="email" id="email" required />
-
-    <label for="message">Message</label>
-    <textarea id="message" rows="5" required></textarea>
-
-    <button type="submit">Send Message</button>
-</form>
-</section>
-
-
-  <!-- FOOTER -->
   <footer>
-    <p>© 2024 Mohith Sai. Designed with passion.</p>
+    <p>© 2026 Mohith Sai. Designed with passion.</p>
   </footer>
+
   <script>
 /* =========================
    2026 CLEAN & LAG-FREE JS
@@ -532,7 +513,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 1. Toggle Mobile Menu
   hamburger.addEventListener("click", (e) => {
-    e.stopPropagation(); // Prevents click from bubbling
+    e.stopPropagation();
     navMenu.classList.toggle("active");
   });
 
@@ -559,7 +540,7 @@ document.addEventListener("DOMContentLoaded", () => {
             behavior: "smooth"
           });
         }
-        navMenu.classList.remove("active"); // Close menu on mobile after click
+        navMenu.classList.remove("active");
       }
     });
   });
@@ -574,26 +555,19 @@ contactForm.addEventListener("submit", (e) => {
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
   
-  // Detection for Mobile (iOS, Android, etc.)
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   if (isMobile) {
-    /* --- MOBILE: Use Gmail (mailto) --- */
     const subject = `Portfolio Inquiry from ${name}`;
     const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-    
-    // Opens the Gmail app directly
     window.location.href = `mailto:bmstpt1@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-    
   } else {
-    /* --- DESKTOP: Use Formspree (Silent API Call) --- */
     const formData = {
       name: name,
       email: email,
       message: message
     };
 
-    // Change 'your_formspree_id' to your actual Formspree ID
     fetch("https://formspree.io/f/your_formspree_id", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -609,7 +583,6 @@ contactForm.addEventListener("submit", (e) => {
     });
   }
 });
-    
 </script>
 </body>
 </html>
