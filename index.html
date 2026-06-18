@@ -3,356 +3,476 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mohith Sai | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <title>Mohith Sai | Software Engineer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-/* =========================
-   2026 MODERN PORTFOLIO UI
-   Clean • Recruiter-first
-========================= */
+/* ==========================================================================
+   2026 PROFESSIONAL SOFTWARE ENGINEER PORTFOLIO UI (RECRUITER-OPTIMIZED)
+   ========================================================================== */
 
-/* Reset */
+/* Design System Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg-dark-core: #030712;
+  --bg-slate-card: rgba(17, 24, 39, 0.7);
+  --color-primary: #38bdf8;
+  --color-accent: #facc15;
+  --color-text-main: #f3f4f6;
+  --color-text-muted: #9ca3af;
+  --border-glow: rgba(56, 189, 248, 0.15);
+  --card-transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top, #0b1220, #020617);
-  color: #e5e7eb;
-  line-height: 1.7;
+  background: radial-gradient(circle at 50% 0%, #0f172a 0%, var(--bg-dark-core) 70%);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Links */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Typography */
-h1, h2, h3 {
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-/* ================= HEADER ================= */
+/* ================= COMPONENT INTERFACES ================= */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 40px;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(12px);
+  padding: 20px 5%;
+  background: rgba(3, 7, 18, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   position: sticky;
   top: 0;
-  z-index: 999;
-  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-glow);
 }
 
 .logo {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 800;
-  color: #38bdf8;
+  color: var(--color-primary);
+  letter-spacing: -0.5px;
 }
 
 .logo span {
-  color: #facc15;
+  color: var(--color-accent);
 }
 
 .navbar ul {
   display: flex;
-  gap: 28px;
+  gap: 32px;
   list-style: none;
 }
 
 .navbar a {
   font-weight: 500;
-  opacity: 0.8;
-  transition: opacity 0.3s, color 0.3s;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  transition: var(--card-transition);
 }
 
 .navbar a:hover,
 .navbar a.active {
-  opacity: 1;
-  color: #38bdf8;
+  color: var(--color-primary);
 }
 
-/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   cursor: pointer;
 }
 
 .hamburger .line {
-  width: 24px;
-  height: 3px;
-  background: #38bdf8;
-  border-radius: 2px;
+  width: 26px;
+  height: 2.5px;
+  background: var(--color-primary);
+  border-radius: 4px;
 }
 
-/* ================= HERO ================= */
+/* ================= HERO INTERFACE ================= */
 .hero {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 24px;
+}
+
+.profile-container {
+  position: relative;
+  margin-bottom: 28px;
 }
 
 .profile-img {
-  width: 150px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  margin-bottom: 24px;
-  border: 3px solid rgba(56,189,248,0.6);
-  box-shadow: 0 0 40px rgba(56,189,248,0.35);
+  object-fit: cover;
+  border: 2px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
 }
 
 .hero h1 {
-  font-size: 2.6rem;
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
 }
 
 .highlight {
-  color: #facc15;
+  background: linear-gradient(to right, var(--color-primary), #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero p {
-  margin-top: 8px;
-  font-size: 1.1rem;
-  color: #94a3b8;
+  max-width: 600px;
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  margin-bottom: 32px;
 }
 
-/* CTA */
-.btn {
-  margin-top: 24px;
-  padding: 12px 28px;
-  border-radius: 12px;
-  font-weight: 600;
-  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-  color: #020617;
-  box-shadow: 0 10px 30px rgba(56,189,248,0.35);
-  transition: transform 0.3s ease;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-/* Socials */
-.socials {
-  margin-top: 26px;
+.btn-group {
   display: flex;
-  gap: 22px;
-  font-size: 26px;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 32px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--card-transition);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--color-primary), #0284c7);
+  color: #030712;
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.25);
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.35);
+}
+
+.socials {
+  margin-top: 36px;
+  display: flex;
+  gap: 24px;
 }
 
 .socials a {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  font-size: 1.6rem;
+  filter: grayscale(30%);
+  transition: var(--card-transition);
 }
 
 .socials a:hover {
-  transform: translateY(-4px) scale(1.1);
-  opacity: 0.9;
+  transform: scale(1.15);
+  filter: grayscale(0%);
 }
 
-/* ================= SECTIONS ================= */
+/* ================= VIEWPORT SECTIONS ================= */
 section {
-  padding: 80px 40px;
-  max-width: 1200px;
+  padding: 100px 5%;
+  max-width: 1300px;
   margin: auto;
 }
 
-h2 {
+.section-title {
   text-align: center;
   font-size: 2.2rem;
-  margin-bottom: 50px;
-  color: #38bdf8;
+  font-weight: 800;
+  margin-bottom: 60px;
+  letter-spacing: -0.5px;
 }
 
-h2::after {
-  content: "";
-  display: block;
-  width: 70px;
-  height: 3px;
-  margin: 14px auto 0;
-  background: linear-gradient(to right, #38bdf8, #facc15);
-  border-radius: 5px;
+.section-title span {
+  color: var(--color-primary);
 }
 
-/* ================= ABOUT ================= */
-.about-container {
-  display: flex;
-  gap: 50px;
-  flex-wrap: wrap;
+/* ================= ABOUT LAYOUT ================= */
+.about-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
   align-items: center;
+}
+
+.about-display {
+  display: flex;
   justify-content: center;
 }
 
 .about-img {
-  width: 260px;
-  border-radius: 24px;
-  box-shadow: 0 25px 60px rgba(250,204,21,0.25);
+  width: 100%;
+  max-width: 320px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
 }
 
-.about-container p {
-  max-width: 620px;
+.about-content p {
   font-size: 1.05rem;
-  color: #cbd5f5;
+  color: #d1d5db;
+  margin-bottom: 20px;
 }
 
-/* ================= SKILLS ================= */
+/* ================= SKILLS GRID ================= */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
 }
 
-.skill {
-  background: rgba(30,41,59,0.65);
-  border: 1px solid rgba(56,189,248,0.15);
+.skill-card {
+  background: var(--bg-slate-card);
+  border: 1px solid var(--border-glow);
   padding: 24px;
-  border-radius: 18px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  backdrop-filter: blur(8px);
+  transition: var(--card-transition);
 }
 
-.skill:hover {
-  transform: translateY(-8px);
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(17, 24, 39, 0.9);
 }
 
-.skill h3 {
-  color: #facc15;
-  font-size: 1.05rem;
+.skill-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
 }
 
-/* ================= PROJECTS ================= */
+/* ================= PRODUCTS / PRODUCTION ECOSYSTEM ================= */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 32px;
 }
 
 .project-card {
-  background: linear-gradient(180deg, rgba(30,41,59,0.9), rgba(2,6,23,0.9));
-  border: 1px solid rgba(56,189,248,0.15);
-  padding: 26px;
-  border-radius: 22px;
-  transition: transform 0.3s ease;
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.8) 0%, rgba(3, 7, 12, 0.95) 100%);
+  border: 1px solid var(--border-glow);
+  padding: 32px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  position: relative;
+  transition: var(--card-transition);
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 20px 40px rgba(3, 7, 18, 0.6);
+}
+
+.card-header-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.status-badge.stable {
+  background: rgba(56, 189, 248, 0.1);
+  color: var(--color-primary);
+  border: 1px solid rgba(56, 189, 248, 0.2);
 }
 
 .project-card h3 {
-  color: #facc15;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 12px;
 }
 
 .project-card p {
-  color: #cbd5e1;
+  color: var(--color-text-muted);
   font-size: 0.95rem;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+  flex-grow: 1;
 }
 
-.tech-stack {
-  color: #38bdf8 !important;
-  font-weight: 500;
-  font-size: 0.85rem !important;
-  margin-top: 5px;
-  margin-bottom: 15px !important;
-}
-
-.project-links {
-  margin-top: auto;
+.tech-pill-group {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-bottom: 28px;
 }
 
-.project-links a {
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: rgba(56, 189, 248, 0.15);
-  border: 1px solid rgba(56, 189, 248, 0.4);
-  font-size: 0.85rem;
-  transition: background 0.3s, border-color 0.3s;
+.tech-pill {
+  background: rgba(31, 41, 55, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #cbd5e1;
 }
 
-.project-links a:hover {
-  background: rgba(56, 189, 248, 0.3);
-  border-color: #38bdf8;
-}
-
-/* ================= CONTACT ================= */
-.contact form {
-  max-width: 420px;
-  margin: auto;
+.project-actions {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.action-link {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--card-transition);
+}
+
+.action-link:hover {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* ================= CONTACT FRAME ================= */
+.contact-container {
+  max-width: 500px;
+  margin: auto;
+  background: var(--bg-slate-card);
+  border: 1px solid var(--border-glow);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #cbd5e1;
 }
 
 .contact input,
 .contact textarea {
-  background: #020617;
-  border: 1px solid #334155;
-  color: #e5e7eb;
-  padding: 10px;
+  width: 100%;
+  background: #030712;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--color-text-main);
+  padding: 12px 16px;
   border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: var(--card-transition);
 }
 
-.contact button {
-  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-  color: #020617;
-  cursor:pointer;
-  border:none;
-  padding: 12px;
-  border-radius: 10px;
+.contact input:focus,
+.contact textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.15);
+}
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--color-primary), #0ea5e9);
+  color: #030712;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
   font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--card-transition);
 }
 
-/* ================= FOOTER ================= */
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.2);
+}
+
 footer {
   text-align: center;
-  padding: 20px;
-  color: #94a3b8;
-  background: #020617;
+  padding: 40px 20px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-glow);
+  background: #030712;
 }
 
-/* ================= MOBILE ================= */
+/* ================= VIEWPORT MEDIA QUERY IMPLEMENTATION ================= */
+@media (max-width: 968px) {
+  .about-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
 @media (max-width: 768px) {
+  header {
+    padding: 16px 24px;
+  }
+  
   .navbar ul {
     display: none;
     flex-direction: column;
-    background: #0f172a;
+    background: #0b1329;
     position: absolute;
-    top: 70px;
-    right: 20px;
+    top: 72px;
+    right: 24px;
     border-radius: 12px;
-    padding: 20px;
-    width: 200px;
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    gap: 15px;
+    padding: 24px;
+    width: 220px;
+    border: 1px solid var(--border-glow);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    gap: 20px;
   }
 
   .navbar ul.active {
-    display: flex !important; 
-    z-index: 1000;
+    display: flex !important;
   }
 
   .hamburger {
     display: flex;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
   }
 }
 </style>
@@ -366,11 +486,11 @@ footer {
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#projects">Products</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="hamburger" aria-label="Menu" role="button" tabindex="0">
+    <div class="hamburger" aria-label="Toggle Menu" role="button" tabindex="0">
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
@@ -378,102 +498,116 @@ footer {
   </header>
 
   <section id="home" class="hero">
-    <img src="mohith.png" alt="Profile Picture" class="profile-img" />
+    <div class="profile-container">
+      <img src="mohith.png" alt="Mohith Sai Profile Framework" class="profile-img" />
+    </div>
     <h1>Hi, I'm <span class="highlight">Mohith Sai</span></h1>
     <p>
-      Software Engineer focused on building human-centered applications using
-      Python, Django, JavaScript, and scalable backend systems.
+      Software Engineer focused on building production-ready, human-centered architectural systems using Python, Django, JavaScript, and Native Client Utilities.
     </p>
-    <a href="Resume.pdf" download class="btn">📄 Download Resume</a>
-    <div class="socials" style="font-size:28px;">
-      <a href="https://github.com/mohith933" target="_blank" aria-label="GitHub">🐙</a>
-      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">💼</a>
+    <div class="btn-group">
+      <a href="Resume.pdf" download class="btn primary">📄 Download Resume</a>
+    </div>
+    <div class="socials">
+      <a href="https://github.com/mohith933" target="_blank" aria-label="GitHub Asset Engine">🐙</a>
+      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn Business Network">💼</a>
     </div>
   </section>
 
   <section id="about">
-    <h2>About Me</h2>
-    <div class="about-container">
-      <img src="mohith1.png" alt="About Image" class="about-img" />
-      <p>
-        I am a Computer Science student interested in Software Engineering
-        and full-stack web development.
-        I build real-world applications using Python, Django, JavaScript,
-        and PostgreSQL with focus on clean UI and backend systems.
-        Currently improving my Data Structures, backend development,
-        and practical problem-solving skills through projects.
-      </p>
+    <h2 class="section-title">About <span>Me</span></h2>
+    <div class="about-wrapper">
+      <div class="about-display">
+        <img src="mohith1.png" alt="Mohith Sai Workspace View" class="about-img" />
+      </div>
+      <div class="about-content">
+        <p>
+          I am a Computer Science Engineer specializing in system designs, core application logic, and full-stack environments. 
+        </p>
+        <p>
+          My technical framework spans building structured backend logic with Python and Django to shipping offline-first native applications on public marketplaces. I focus on optimizing conversion parameters, interface efficiency, and writing clean, scalable logic components.
+        </p>
+      </div>
     </div>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
+    <h2 class="section-title">Technical <span>Stack</span></h2>
     <div class="skills-grid">
-      <div class="skill"><h3>🐍 Python</h3></div>
-      <div class="skill"><h3>🌐 Django</h3></div>
-      <div class="skill"><h3>⚡ JavaScript</h3></div>
-      <div class="skill"><h3>🗄️ PostgreSQL</h3></div>
-      <div class="skill"><h3>🔗 REST APIs</h3></div>
-      <div class="skill"><h3>☁️ Cloud Deployment</h3></div>
-      <div class="skill"><h3>🌍 HTML & CSS</h3></div>
-      <div class="skill"><h3>🔧 Git</h3></div>
+      <div class="skill-card"><span>🐍</span><h3>Python</h3></div>
+      <div class="skill-card"><span>🌐</span><h3>Django Framework</h3></div>
+      <div class="skill-card"><span>⚡</span><h3>JavaScript</h3></div>
+      <div class="skill-card"><span>🗄️</span><h3>PostgreSQL</h3></div>
+      <div class="skill-card"><span>🔗</span><h3>RESTful APIs</h3></div>
+      <div class="skill-card"><span>🖥️</span><h3>Electron App Architecture</h3></div>
+      <div class="skill-card"><span>🔧</span><h3>Git Source Control</h3></div>
+      <div class="skill-card"><span>📦</span><h3>NPM Deployment</h3></div>
     </div>
   </section>
 
   <section id="projects">
-    <h2>Main Products</h2>
+    <h2 class="section-title">Production <span>Ecosystem</span></h2>
     <div class="projects-grid">
 
       <div class="project-card">
+        <div class="card-header-meta">
+          <span class="status-badge stable">npm stable</span>
+        </div>
         <h3>🛠️ Hridaya CLI</h3>
         <p>
-          A developer tool designed for running clear, human-centric commands inside the terminal.
+          A developer environment utility tool designed to convert clear, human-centric native phrasing directly into functional command-line operations, removing syntax hurdles.
         </p>
-        <p>
-          Built to ease command-line syntax stress, allowing intuitive native operations and effortless workflows.
-        </p>
-        <p class="tech-stack">
-          Node.js • JavaScript • NPM • CLI-Engine
-        </p>
-        <div class="project-links">
-          <a href="https://www.npmjs.com/package/hridaya-os" target="_blank">NPM Package</a>
-          <a href="https://github.com/Mohith933/HridayaOS" target="_blank">GitHub</a>
+        <div class="tech-pill-group">
+          <span class="tech-pill">Node.js</span>
+          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">NPM</span>
+          <span class="tech-pill">CLI Engine</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://www.npmjs.com/package/hridaya-os" target="_blank" class="action-link">NPM Link</a>
+          <a href="https://github.com/Mohith933" target="_blank" class="action-link">Source GitHub</a>
         </div>
       </div>
 
       <div class="project-card">
+        <div class="card-header-meta">
+          <span class="status-badge">Production Live</span>
+        </div>
         <h3>💖 HeartFeel</h3>
         <p>
-          A calm writing space designed for emotional reflection and private expression.
+          A minimal, offline-first application built to establish an analytical, private reflection environment. Published and certified inside the Windows distribution channel.
         </p>
-        <p>
-          Published on the Microsoft Store as an offline-first native app centered around privacy and user experience.
-        </p>
-        <p class="tech-stack">
-          HTML • CSS • JavaScript • PWA • Electron
-        </p>
-        <div class="project-links">
-          <a href="https://apps.microsoft.com/detail/9n79gpdfj3g7?hl=en-us&gl=IN&ocid=pdpshare">Microsoft Store</a>
-          <a href="https://github.com/Mohith933/HeartFeel" target="_blank">GitHub</a>
-          <a href="https://mohith933.github.io/HeartFeel/" target="_blank">Live Web</a>
+        <div class="tech-pill-group">
+          <span class="tech-pill">HTML5/CSS3</span>
+          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">PWA</span>
+          <span class="tech-pill">Electron Framework</span>
+        </div>
+        <div class="project-actions">
+          <a href="ms-windows-store://pdp/?productid=9N79GPDFJ3G7" class="action-link">Microsoft Store</a>
+          <a href="https://github.com/Mohith933/HeartFeel" target="_blank" class="action-link">GitHub</a>
+          <a href="https://heartfeel.vercel.app/" target="_blank" class="action-link">Live Web</a>
         </div>
       </div>
 
       <div class="project-card">
+        <div class="card-header-meta">
+          <span class="status-badge">Production Live</span>
+        </div>
         <h3>❤️ HeartNote</h3>
         <p>
-          Full-stack writing platform focused on thoughtful AI-assisted responses and clean design.
+          A secure writing engine leveraging relational database setups and backend verification to curate highly structured responses inside a responsive workspace layout.
         </p>
-        <p>
-          Built with scalable backend architecture, user authentication, and responsive layout flows.
-        </p>
-        <p class="tech-stack">
-          Python • Django • PostgreSQL • REST APIs
-        </p>
-        <div class="project-links">
-          <a href="https://apps.microsoft.com/detail/9pm5qml3dxjk?hl=en-GB&gl=IN">Microsoft Store</a>
-          <a href="https://github.com/Mohith933/HeartNote" target="_blank">GitHub</a>
-          <a href="https://heartnote-ai.onrender.com/" target="_blank">Live Web</a>
+        <div class="tech-pill-group">
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">Django</span>
+          <span class="tech-pill">PostgreSQL</span>
+          <span class="tech-pill">REST APIs</span>
+        </div>
+        <div class="project-actions">
+          <a href="ms-windows-store://pdp/?productid=YOUR_HEARTNOTE_STORE_ID" class="action-link">Microsoft Store</a>
+          <a href="https://github.com/Mohith933/HeartNote" target="_blank" class="action-link">GitHub</a>
+          <a href="https://heartnote-ai.onrender.com/" target="_blank" class="action-link">Live Web</a>
         </div>
       </div>
 
@@ -481,48 +615,51 @@ footer {
   </section>
 
   <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <form id="hybridContactForm">
-      <label for="name">Name</label>
-      <input type="text" id="name" required />
-
-      <label for="email">Email</label>
-      <input type="email" id="email" required />
-
-      <label for="message">Message</label>
-      <textarea id="message" rows="5" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
+    <h2 class="section-title">Get In <span>Touch</span></h2>
+    <div class="contact-container">
+      <form id="hybridContactForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="John Doe" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="johndoe@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message Space</label>
+          <textarea id="message" rows="5" placeholder="Enter your project details..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send System Message</button>
+      </form>
+    </div>
   </section>
 
   <footer>
-    <p>© 2026 Mohith Sai. Designed with passion.</p>
+    <p>© 2026 Mohith Sai. Engineered with structural clarity.</p>
   </footer>
 
   <script>
-/* =========================
-   2026 CLEAN & LAG-FREE JS
-   Optimized • Minimal
-========================= */
+/* ==========================================================================
+   INTERACTIVE LOGIC PATTERNS
+   ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".navbar ul");
   const navLinks = document.querySelectorAll(".navbar a");
 
-  // 1. Toggle Mobile Menu
+  // Mobile navigation controller
   hamburger.addEventListener("click", (e) => {
     e.stopPropagation();
     navMenu.classList.toggle("active");
   });
 
-  // 2. Close menu when clicking outside
   document.addEventListener("click", () => {
     navMenu.classList.remove("active");
   });
 
-  // 3. Smooth Scroll + Close Menu on Link Click
+  // Precise scrolling navigation algorithm
   navLinks.forEach(link => {
     link.addEventListener("click", e => {
       const targetId = link.getAttribute("href");
@@ -531,7 +668,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
-          const headerOffset = 80;
+          const headerOffset = 90;
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -546,6 +683,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Hybrid Form Routing Logic Engine
 const contactForm = document.getElementById("hybridContactForm");
 
 contactForm.addEventListener("submit", (e) => {
@@ -575,10 +713,10 @@ contactForm.addEventListener("submit", (e) => {
     })
     .then(response => {
       if (response.ok) {
-        alert("Thanks! Your message has been sent via Formspree.");
+        alert("System Confirmation: Message transmitted successfully via Formspree routing.");
         contactForm.reset();
       } else {
-        alert("Oops! There was a problem sending your message.");
+        alert("Transmission Interrupted: Formspree endpoint rejected request payload.");
       }
     });
   }
